@@ -15,3 +15,5 @@ class Product(Base, TimeStampFlagsMixin):
     price: Mapped[decimal.Decimal] = mapped_column(sa.DECIMAL(12, 2), default=0)
     image_path: Mapped[str | None] = mapped_column(sa.String(length=255), nullable=True)
 
+    def __repr__(self):
+        return f"Товар: {self.title}"
